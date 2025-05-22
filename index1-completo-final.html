@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<!-- SEO básico -->
+<meta content="Te equipamos: tienda especializada en equipamiento outdoor en Perú. Asesoría profesional, productos nuevos y de segunda mano para trekking, senderismo, escalada y más." name="description"/>
+<meta content="equipamiento outdoor, trekking, senderismo, montaña, tienda outdoor Perú, segunda mano, calzado, ropa técnica, asesoría profesional" name="keywords"/>
+<meta content="Te equipamos" name="author"/>
+<!-- Open Graph (Facebook, WhatsApp, etc.) -->
+<meta content="Te equipamos - Equipamiento outdoor en Perú" property="og:title"/>
+<meta content="Asesoría profesional y productos nuevos y de segunda mano para tus aventuras al aire libre." property="og:description"/>
+<meta content="https://images.unsplash.com/photo-1465311440653-ba9b1d9b0f5b?w=1200" property="og:image"/>
+<meta content="https://www.teequipamos.pe" property="og:url"/>
+<meta content="website" property="og:type"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Te equipamos - Equipamiento outdoor en Perú" name="twitter:title"/>
+<meta content="Asesoría personalizada y equipamiento para tus aventuras." name="twitter:description"/>
+<meta content="https://images.unsplash.com/photo-1465311440653-ba9b1d9b0f5b?w=1200" name="twitter:image"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Te equipamos - Equipamiento outdoor en Perú</title>
+<style>
+        /* Variables y reset */
+        :root {
+            --primary: #2A6041;
+            --secondary: #F39237;
+            --accent: #BF1363;
+            --dark: #1D3557;
+            --light: #F5F5F5;
+            --gray: #6B7280;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Segoe UI', sans-serif;
+        }
+
+        html, body {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        /* Tipografía */
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* Layout principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .slide {
+            min-height: 100vh;
+            display: none;
+            padding: 4rem 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .slide.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .slide-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Navegación */
+        .nav {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--gray);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .nav-dot.active {
+            background: var(--primary);
+            transform: scale(1.3);
+        }
+
+        /* Botones */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            border: 2px solid var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+            border: 2px solid var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background: transparent;
+            color: var(--secondary);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Portada */
+        .cover {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 2rem;
+        }
+
+        .logo-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin-bottom: 2rem;
+        }
+
+        .logo-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--primary);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .play-btn {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: var(--secondary);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            border: none;
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .play-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        .subtitle {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        /* Modal de video */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+        }
+
+        .modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .modal-content {
+            width: 90%;
+            max-width: 800px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .modal-header {
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe, 
+        .video-container .video-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+        }
+
+        /* Secciones de contenido */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        /* Quiénes somos */
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        /* Catálogo */
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .catalog-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .catalog-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .catalog-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .catalog-content {
+            padding: 1.5rem;
+        }
+
+        .catalog-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Segunda mano */
+        .benefits-list {
+            margin: 2rem 0;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            gap: 1rem;
+        }
+
+        .benefit-icon {
+            min-width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .benefit-content h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Asesoría */
+        .advisory-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .advisory-img {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .advisory-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .advisory-text {
+            flex: 1;
+        }
+
+        /* Testimonios */
+        .testimonials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial {
+            flex: 1;
+            min-width: 280px;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .testimonial:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 4rem;
+            color: rgba(0, 0, 0, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-text {
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+        }
+
+        .testimonial-meta {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Ventajas competitivas */
+        .advantages {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .advantage-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .advantage-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .advantage-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+
+        .advantage-icon svg {
+            width: 30px;
+            height: 30px;
+            fill: white;
+        }
+
+        /* Planes y precios */
+        .pricing {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+            justify-content: center;
+        }
+
+        .price-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .price-header {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .price-title {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-amount {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .price-period {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .price-features {
+            padding: 1.5rem;
+        }
+
+        .price-feature {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .price-feature svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--primary);
+        }
+
+        .price-footer {
+            padding: 0 1.5rem 1.5rem;
+            text-align: center;
+        }
+
+        .promotion {
+            background: var(--secondary);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            margin-top: 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+
+        /* Contacto */
+        .contact {
+            text-align: center;
+        }
+
+        .cta-text {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            transform: scale(1.1);
+            background: var(--secondary);
+        }
+
+        .social-link svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .about-content,
+            .advisory-content {
+                flex-direction: row;
+            }
+        }
+
+        @media (max-width: 767px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .logo-container {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .play-btn {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .nav {
+                bottom: 1rem;
+            }
+            
+            .catalog-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials,
+            .advantages {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+<!-- Favicon -->
+<link href="https://www.teequipamos.pe/favicon.png" rel="icon" type="image/png"/>
+<!-- Redes sociales reales (editar con URLs reales si se tienen) -->
+<link href="https://www.facebook.com/teequipamos" rel="me">
+<link href="https://www.instagram.com/teequipamos" rel="me"/>
+<!-- Google Search Console -->
+<meta content="CÓDIGO_DE_VERIFICACIÓN_DE_GOOGLE" name="google-site-verification"/>
+<!-- Google Analytics (medición básica) -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+</link></head>
+<body>
+<!-- Navegación de puntos -->
+<div class="nav">
+<div class="nav-dot active" data-slide="0"></div>
+<div class="nav-dot" data-slide="1"></div>
+<div class="nav-dot" data-slide="2"></div>
+<div class="nav-dot" data-slide="3"></div>
+<div class="nav-dot" data-slide="4"></div>
+<div class="nav-dot" data-slide="5"></div>
+<div class="nav-dot" data-slide="6"></div>
+<div class="nav-dot" data-slide="8"></div>
+<div class="nav-dot" data-slide="9"></div>
+</div>
+<!-- Slides -->
+<div class="container">
+<!-- 1. Portada -->
+<section class="slide active" id="slide-0">
+<div class="slide-inner cover">
+<div class="logo-container">
+<img alt="Nuestra tienda Te Equipamos" class="logo-circle" src="https://images.unsplash.com/photo-1465311440653-ba9b1d9b0f5b?w=600&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2VuZGVyaXNtb3xlbnwwfDB8MHx8fDI%3D"/>
+<button class="play-btn" id="open-video">
+<svg class="feather feather-play" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+</button>
+</div>
+<h1>Te equipamos</h1>
+<p class="subtitle">Tu aventura comienza aquí</p>
+<p>18 años de experiencia equipando a los amantes del outdoor en Perú. Productos nuevos y de segunda mano con asesoría profesional para cada aventura.</p>
+<div style="margin-top: 2rem;">
+<a class="btn btn-primary slide-link" data-slide="2" href="#slide-2">Conócenos</a>
+</div>
+</div>
+</section>
+<!-- 2. Quiénes somos -->
+<section class="slide" id="slide-1">
+<div class="slide-inner">
+<h2 class="section-title">Quiénes somos</h2>
+<div class="about-content">
+<div class="about-text">
+<p>En <strong>Te equipamos</strong> llevamos 18 años siendo el aliado perfecto para los amantes del outdoor en Perú. Nacimos de la pasión por la naturaleza y el compromiso con equipar correctamente a cada aventurero.</p>
+<p>Nuestra filosofía se basa en tres pilares fundamentales:</p>
+<ul style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+<li><strong>Experiencia:</strong> Nuestro equipo está formado por deportistas y aventureros que conocen de primera mano las necesidades de cada actividad.</li>
+<li><strong>Calidad:</strong> Seleccionamos cuidadosamente cada producto, tanto nuevo como de segunda mano, para garantizar su durabilidad y rendimiento.</li>
+<li><strong>Sostenibilidad:</strong> Promovemos la reutilización de equipamiento en buen estado, contribuyendo a reducir el impacto ambiental.</li>
+</ul>
+<p>Más que una tienda, somos un centro de asesoría donde encontrarás el equipo perfecto para cada camino que decidas recorrer.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Catálogo de productos -->
+<section class="slide" id="slide-2">
+<div class="slide-inner">
+<h2 class="section-title">Nuestro catálogo</h2>
+<p>Ofrecemos una amplia gama de productos especializados para todas tus aventuras al aire libre. Cada artículo es seleccionado por su calidad, durabilidad y rendimiento.</p>
+<div class="catalog-grid">
+<div class="catalog-item">
+<img alt="Calzado " class="catalog-img" src="https://images.unsplash.com/photo-1463694775559-eea25626346b?q=80&amp;w=2070&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"/>
+<div class="catalog-content">
+<h3 class="catalog-title">Calzado</h3>
+<p>Zapatillas y botas diseñadas para diferentes terrenos y condiciones climáticas.</p>
+<p><strong>Beneficio:</strong> Protección y estabilidad para prevenir lesiones en cualquier aventura.</p>
+</div>
+</div>
+<div class="catalog-item">
+<img alt="Imagen ilustrativa" class="catalog-img" src="https://images.unsplash.com/photo-1571008887538-2839b6f6a6b3?auto=format&amp;fit=crop&amp;w=600&amp;q=60"/>
+<div class="catalog-content">
+<h3 class="catalog-title">Prendas</h3>
+<p>Ropa técnica que regula la temperatura corporal y protege de los elementos.</p>
+<p><strong>Beneficio:</strong> Comodidad y protección para disfrutar de la naturaleza en cualquier clima.</p>
+</div>
+</div>
+<div class="catalog-item">
+<img alt="Imagen ilustrativa" class="catalog-img" src="https://images.unsplash.com/photo-1603484477859-abe6a73f9365?auto=format&amp;fit=crop&amp;w=600&amp;q=60"/>
+<div class="catalog-content">
+<h3 class="catalog-title">Accesorios</h3>
+<p>Complementos esenciales para mejorar tu experiencia outdoor.</p>
+<p><strong>Beneficio:</strong> Funcionalidad adicional que marca la diferencia en situaciones críticas.</p>
+</div>
+</div>
+<div class="catalog-item">
+<img alt="Imagen ilustrativa" class="catalog-img" src="https://images.unsplash.com/photo-1604671801903-9a16b9f7375b?auto=format&amp;fit=crop&amp;w=600&amp;q=60"/>
+<div class="catalog-content">
+<h3 class="catalog-title">Deportes colectivos</h3>
+<p>Equipamiento especializado para actividades grupales al aire libre.</p>
+<p><strong>Beneficio:</strong> Material de calidad que potencia el rendimiento del equipo.</p>
+</div>
+</div>
+<div class="catalog-item">
+<img alt="Imagen ilustrativa" class="catalog-img" src="https://images.unsplash.com/photo-1589149098258-3e9102cd8465?auto=format&amp;fit=crop&amp;w=600&amp;q=60"/>
+<div class="catalog-content">
+<h3 class="catalog-title">Escalada</h3>
+<p>Material técnico y de seguridad para escalada deportiva y tradicional.</p>
+<p><strong>Beneficio:</strong> Seguridad certificada para disfrutar con confianza de la vertical.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Segunda Mano -->
+<section class="slide" id="slide-3">
+<div class="slide-inner">
+<h2 class="section-title">Segunda Mano</h2>
+<p>En Te equipamos creemos en dar una segunda vida al equipamiento de calidad. Nuestra sección de productos de segunda mano ofrece alternativas sostenibles sin comprometer el rendimiento.</p>
+<div class="benefits-list">
+<div class="benefit-item">
+<div class="benefit-icon">1</div>
+<div class="benefit-content">
+<h4>Ahorro significativo</h4>
+<p>Accede a marcas premium con descuentos de hasta el 60% sobre el precio original, manteniendo la calidad y funcionalidad.</p>
+</div>
+</div>
+<div class="benefit-item">
+<div class="benefit-icon">2</div>
+<div class="benefit-content">
+<h4>Impacto ambiental reducido</h4>
+<p>Cada producto reutilizado significa menos recursos naturales consumidos y menos residuos en vertederos.</p>
+</div>
+</div>
+<div class="benefit-item">
+<div class="benefit-icon">3</div>
+<div class="benefit-content">
+<h4>Acceso a modelos descontinuados</h4>
+<p>Encuentra equipamiento de ediciones limitadas o modelos que ya no se fabrican pero mantienen su excelente rendimiento.</p>
+</div>
+</div>
+<div class="benefit-item">
+<div class="benefit-icon">4</div>
+<div class="benefit-content">
+<h4>Economía circular</h4>
+<p>Formamos parte de un sistema que valora los recursos y extiende la vida útil de productos de calidad.</p>
+</div>
+</div>
+</div>
+<h3>Nuestro proceso de selección</h3>
+<p>Cada artículo de segunda mano pasa por un riguroso proceso de inspección y acondicionamiento:</p>
+<ol style="margin-left: 1.5rem; margin-bottom: 1.5rem;">
+<li>Evaluación inicial del estado y funcionalidad</li>
+<li>Limpieza profesional y desinfección</li>
+<li>Reparaciones menores si son necesarias</li>
+<li>Prueba de rendimiento</li>
+<li>Clasificación según estado y fijación de precio justo</li>
+</ol>
+<div style="background: #f0f9f4; padding: 1.5rem; border-radius: 8px; margin-top: 2rem;">
+<h3 style="margin-top: 0;">Nuestra garantía</h3>
+<p>Todos los productos de segunda mano incluyen 30 días de garantía. Si el artículo presenta algún problema no detectado durante nuestra revisión, te ofrecemos la devolución del importe o el cambio por otro producto de valor similar.</p>
+</div>
+</div>
+</section>
+<!-- 5. Asesoría Profesional -->
+<section class="slide" id="slide-4">
+<div class="slide-inner">
+<h2 class="section-title">Asesoría Profesional</h2>
+<div class="advisory-content">
+<div class="advisory-text">
+<p>Lo que nos diferencia es nuestro compromiso con tu experiencia. Por eso, ofrecemos asesoría gratuita personalizada para cada cliente.</p>
+<div class="benefits-list">
+<div class="benefit-item">
+<div class="benefit-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+</div>
+<div class="benefit-content">
+<h4>Qué incluye nuestra asesoría</h4>
+<p>Evaluación de necesidades específicas, recomendaciones personalizadas según tu nivel y objetivos, instrucciones de uso y mantenimiento, y seguimiento post-compra.</p>
+</div>
+</div>
+<div class="benefit-item">
+<div class="benefit-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="16" y2="12"></line><line x1="12" x2="12.01" y1="8" y2="8"></line></svg>
+</div>
+<div class="benefit-content">
+<h4>Por qué es un valor diferencial</h4>
+<p>Nuestros asesores son deportistas activos con experiencia real en las disciplinas que practicas. No vendemos productos, ofrecemos soluciones basadas en conocimiento práctico.</p>
+</div>
+</div>
+<div class="benefit-item">
+<div class="benefit-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" x2="20" y1="8" y2="14"></line><line x1="23" x2="17" y1="11" y2="11"></line></svg>
+</div>
+<div class="benefit-content">
+<h4>Cómo te ayuda</h4>
+<p>Evitas compras innecesarias o inadecuadas, maximizas tu inversión con equipamiento que realmente necesitas, y reduces el riesgo de lesiones o malas experiencias por usar material inadecuado.</p>
+</div>
+</div>
+</div>
+<div style="margin-top: 2rem;">
+<a class="btn btn-primary slide-link" data-slide="9" href="#slide-9">Agenda tu asesoría</a>
+</div>
+</div>
+<div class="advisory-img">
+<img alt="Imagen ilustrativa" src="https://images.unsplash.com/photo-1504439904031-93dedbfb408f?auto=format&amp;fit=crop&amp;w=600&amp;q=60"/>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. Testimonios -->
+<section class="slide" id="slide-5">
+<div class="slide-inner">
+<h2 class="section-title">Lo que dicen nuestros clientes</h2>
+<div class="testimonials">
+<div class="testimonial">
+<p class="testimonial-text">"Gracias a la asesoría de Te equipamos, pude encontrar las botas perfectas para mi primer trekking en Huaraz. La diferencia entre llevar el calzado adecuado o no fue crucial para disfrutar de la experiencia."</p>
+<p class="testimonial-author">Carlos Mendoza</p>
+<p class="testimonial-meta">Lima | Botas de trekking (nuevas) | Primera experiencia en montaña</p>
+</div>
+<div class="testimonial">
+<p class="testimonial-text">"Encontré una chaqueta impermeable de segunda mano a mitad de precio que la nueva. Después de dos temporadas de uso intenso en condiciones extremas, sigue funcionando perfectamente. Calidad y sostenibilidad van de la mano."</p>
+<p class="testimonial-author">Lucía Fernández</p>
+<p class="testimonial-meta">Cusco | Chaqueta impermeable (segunda mano) | Guía de montaña</p>
+</div>
+<div class="testimonial">
+<p class="testimonial-text">"Como ciclista de ruta que quería probar el MTB, su asesoría fue invaluable. Me ayudaron a elegir equipamiento que se adaptaba a mi presupuesto y necesidades reales, sin venderme cosas innecesarias. Ahora soy un apasionado del trail."</p>
+<p class="testimonial-author">Miguel Sánchez</p>
+<p class="testimonial-meta">Arequipa | Equipamiento MTB (mixto) | Transición de ciclismo de ruta a montaña</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. Ventajas competitivas -->
+<section class="slide" id="slide-6">
+<div class="slide-inner">
+<h2 class="section-title">Nuestras ventajas</h2>
+<p>¿Qué nos diferencia de otras tiendas de equipamiento outdoor?</p>
+<div class="advantages">
+<div class="advantage-card">
+<div class="advantage-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" x2="2" y1="8" y2="22"></line><line x1="17.5" x2="9" y1="15" y2="15"></line></svg>
+</div>
+<h3>Experiencia práctica</h3>
+<p>Nuestro equipo está formado por deportistas activos que prueban los productos que vendemos. No vendemos teoría, compartimos experiencia real.</p>
+</div>
+<div class="advantage-card">
+<div class="advantage-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" x2="9.01" y1="9" y2="9"></line><line x1="15" x2="15.01" y1="9" y2="9"></line></svg>
+</div>
+<h3>Opciones para todos</h3>
+<p>Combinamos productos nuevos y de segunda mano para ofrecer alternativas a diferentes presupuestos sin comprometer la calidad.</p>
+</div>
+<div class="advantage-card">
+<div class="advantage-icon">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+</div>
+<h3>Garantía extendida</h3>
+<p>Ofrecemos garantías superiores a las del mercado, incluso en productos de segunda mano, porque confiamos en nuestra selección.</p>
+</div>
+</div>
+<div style="margin-top: 3rem;">
+<h3>Nuestro compromiso con la sostenibilidad</h3>
+<p>En Te equipamos creemos que el amor por la naturaleza debe traducirse en acciones concretas para protegerla:</p>
+<ul style="margin-left: 1.5rem; margin-top: 1rem;">
+<li><strong>Programa de recompra:</strong> Compramos tu equipamiento usado en buen estado para darle una segunda vida.</li>
+<li><strong>Reparaciones:</strong> Ofrecemos servicio de reparación para extender la vida útil de tus productos.</li>
+<li><strong>Reciclaje:</strong> Los productos que no pueden ser reutilizados son desmantelados para reciclar sus componentes.</li>
+<li><strong>Embalaje mínimo:</strong> Reducimos al máximo el uso de plásticos y materiales de un solo uso en nuestros envíos.</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- 8. Planes y precios -->
+<!-- 9. Ventajas competitivas y sostenibilidad -->
+<section class="slide" id="slide-8">
+<div class="slide-inner">
+<h2 class="section-title">Ventajas competitivas</h2>
+<div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); margin-bottom: 3rem;">
+<h3 style="margin-top: 0;">Comparativa con la competencia</h3>
+<table style="width: 100%; border-collapse: collapse; margin-top: 1.5rem;">
+<thead>
+<tr style="border-bottom: 2px solid var(--primary);">
+<th style="text-align: left; padding: 0.75rem;">Característica</th>
+<th style="text-align: center; padding: 0.75rem;">Te equipamos</th>
+<th style="text-align: center; padding: 0.75rem;">Competencia</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom: 1px solid #eee;">
+<td style="padding: 0.75rem;">Asesoría personalizada</td>
+<td style="text-align: center; padding: 0.75rem; color: var(--primary);">✓ Gratuita y especializada</td>
+<td style="text-align: center; padding: 0.75rem;">Limitada o con costo</td>
+</tr>
+<tr style="border-bottom: 1px solid #eee;">
+<td style="padding: 0.75rem;">Productos de segunda mano</td>
+<td style="text-align: center; padding: 0.75rem; color: var(--primary);">✓ Con garantía</td>
+<td style="text-align: center; padding: 0.75rem;">No disponible</td>
+</tr>
+<tr style="border-bottom: 1px solid #eee;">
+<td style="padding: 0.75rem;">Experiencia del equipo</td>
+<td style="text-align: center; padding: 0.75rem; color: var(--primary);">✓ Deportistas activos</td>
+<td style="text-align: center; padding: 0.75rem;">Vendedores capacitados</td>
+</tr>
+<tr style="border-bottom: 1px solid #eee;">
+<td style="padding: 0.75rem;">Servicio post-venta</td>
+<td style="text-align: center; padding: 0.75rem; color: var(--primary);">✓ Seguimiento y soporte</td>
+<td style="text-align: center; padding: 0.75rem;">Básico</td>
+</tr>
+<tr>
+<td style="padding: 0.75rem;">Compromiso sostenible</td>
+<td style="text-align: center; padding: 0.75rem; color: var(--primary);">✓ Programa integral</td>
+<td style="text-align: center; padding: 0.75rem;">Iniciativas puntuales</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Nuestro compromiso con la sostenibilidad</h3>
+<p>En Te equipamos no solo hablamos de amor por la naturaleza, lo demostramos con acciones concretas:</p>
+<div class="advantages" style="margin-top: 1.5rem;">
+<div class="advantage-card">
+<h4>Economía circular</h4>
+<p>Promovemos la reutilización de equipamiento en buen estado a través de nuestro programa de compra-venta de artículos de segunda mano.</p>
+</div>
+<div class="advantage-card">
+<h4>Reparación y mantenimiento</h4>
+<p>Ofrecemos servicios de reparación para extender la vida útil de tus productos, evitando el consumo innecesario.</p>
+</div>
+<div class="advantage-card">
+<h4>Reciclaje responsable</h4>
+<p>Los productos que no pueden ser reutilizados son desmantelados para reciclar sus componentes de manera adecuada.</p>
+</div>
+</div>
+<div style="margin-top: 2rem; text-align: center;">
+<p style="font-style: italic; font-size: 1.25rem;">"Cada producto reutilizado es un paso más hacia un futuro sostenible para los espacios naturales que tanto amamos."</p>
+</div>
+</div>
+</section>
+<!-- 10. Contacto -->
+<section class="slide" id="slide-9">
+<div class="slide-inner contact">
+<h2 class="section-title">Contacto</h2>
+<p class="cta-text">Equiparte correctamente es el primer paso para vivir grandes aventuras. ¡Conversemos!</p>
+<div style="margin-top: 2rem;">
+<a class="btn btn-primary" href="#">Visita nuestra tienda</a>
+<a class="btn btn-outline" href="#" style="margin-left: 1rem;">Agenda una asesoría</a>
+</div>
+<div class="social-links">
+<a class="social-link" href="#" title="WhatsApp">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+</a>
+<a class="social-link" href="#" title="Instagram">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+</a>
+<a class="social-link" href="#" title="Ubicación">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+</a>
+</div>
+<div style="margin-top: 3rem;">
+<h3>Horario de atención</h3>
+<p>Lunes a Viernes: 10:00 - 20:00<br/>
+                    Sábados: 10:00 - 18:00<br/>
+                    Domingos: 11:00 - 16:00</p>
+<p style="margin-top: 1.5rem;">
+<strong>Dirección:</strong> Av. Arequipa 1234, Miraflores, Lima<br/>
+<strong>Teléfono:</strong> +51 987 654 321<br/>
+<strong>Email:</strong> info@teequipamos.pe
+                    </p>
+</div>
+</div>
+</section>
+</div>
+<!-- Modal de video -->
+<div class="modal" id="video-modal">
+<div class="modal-content">
+<div class="modal-header">
+<h3>Video de presentación</h3>
+<button class="close-modal" id="close-video">×</button>
+</div>
+<div class="modal-body">
+<div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="True" frameborder="0" src="https://www.youtube.com/embed/8XEpK6FpNZc" title="Video de presentación"></iframe></div>
+<p>
+        🎙️ <span style="font-weight:600;">Guión del video:</span> Te damos la bienvenida a <strong>Te equipamos</strong>. 
+        Con 18 años de experiencia, ofrecemos asesoría personalizada y productos seleccionados nuevos y de segunda mano 
+        para tus aventuras outdoor. No solo vendemos equipamiento, te acompañamos en cada paso. 
+        <strong>¡Tu camino comienza aquí!</strong>
+</p>
+</div>
+</div>
+</div>
+<!-- Notas de diseño (ocultas en la presentación final) -->
+<div id="design-notes" style="display: none;">
+<h2>Notas de diseño</h2>
+<ul>
+<li><strong>Imagen circular:</strong> Tamaño recomendado 280px x 280px en desktop, 220px en móvil. Borde de 6px en color primario (#2A6041) con sombra suave para dar profundidad. Posicionada centrada en la parte superior de la portada con espacio suficiente para el ícono de play en la esquina inferior derecha.</li>
+<li><strong>Tipografía:</strong> Títulos en Poppins Bold, texto en Montserrat Regular. Alternativas: Segoe UI o sistema sans-serif.</li>
+<li><strong>Paleta de colores:</strong>
+<ul>
+<li>Primario: #2A6041 (verde bosque, transmite naturaleza y confianza)</li>
+<li>Secundario: #F39237 (naranja cálido, transmite energía y aventura)</li>
+<li>Acento: #BF1363 (para elementos que requieren atención)</li>
+<li>Oscuro: #1D3557 (para textos principales)</li>
+<li>Claro: #F5F5F5 (para fondos)</li>
+</ul>
+</li>
+<li><strong>Espaciados:</strong> Utilizar múltiplos de 0.5rem para mantener consistencia (0.5rem, 1rem, 1.5rem, 2rem, etc.). Secciones separadas con padding vertical de 4rem para crear respiro entre contenidos.</li>
+<li><strong>Responsividad:</strong> Diseño fluido con puntos de quiebre en 768px para adaptar de layout desktop a móvil. En móvil, elementos en columna única y tamaños reducidos proporcionalmente.</li>
+</ul>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Variables
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.nav-dot');
+            const videoModal = document.getElementById('video-modal');
+            const openVideoBtn = document.getElementById('open-video');
+            const closeVideoBtn = document.getElementById('close-video');
+            const slideLinks = document.querySelectorAll('.slide-link');
+            
+            // Función para cambiar de slide
+            function goToSlide(index) {
+                // Ocultar todos los slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // Desactivar todos los dots
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // Mostrar el slide seleccionado
+                slides[index].classList.add('active');
+                
+                // Activar el dot correspondiente
+                dots[index].classList.add('active');
+                
+                // Scroll al inicio
+                window.scrollTo(0, 0);
+            }
+            
+            // Event listeners para los dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                });
+            });
+            
+            // Event listeners para los enlaces de slide
+            slideLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const slideIndex = parseInt(link.getAttribute('data-slide'));
+                    goToSlide(slideIndex);
+                });
+            });
+            
+            // Modal de video
+            openVideoBtn.addEventListener('click', () => {
+                videoModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevenir scroll
+            });
+            
+            closeVideoBtn.addEventListener('click', () => {
+                videoModal.classList.remove('active');
+                document.body.style.overflow = ''; // Restaurar scroll
+            });
+            
+            // Cerrar modal al hacer clic fuera del contenido
+            videoModal.addEventListener('click', (e) => {
+                if (e.target === videoModal) {
+                    videoModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Navegación con teclado
+            document.addEventListener('keydown', (e) => {
+                // Escape para cerrar modal
+                if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                    videoModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+                
+                // Flechas para navegar entre slides
+                const currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+                
+                if (e.key === 'ArrowRight' && currentIndex < slides.length - 1) {
+                    goToSlide(currentIndex + 1);
+                }
+                
+                if (e.key === 'ArrowLeft' && currentIndex > 0) {
+                    goToSlide(currentIndex - 1);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
